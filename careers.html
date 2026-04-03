@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - CAFE & REFRESH</title>
+    <link rel="stylesheet" href="/src/scss/main.scss">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div id="preloader"><div class="loader"></div></div>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">CAFE & REFRESH</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="reservation.html">Reservation</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="cart.html" class="cart-icon">
+                    <i data-lucide="shopping-cart"></i>
+                    <span id="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-20">
+        <div class="container">
+            <div class="section-title">
+                <h2>Join Our Team</h2>
+                <p>We are always looking for passionate individuals to join our cafe family.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl mb-6">Open Positions</h3>
+                    <div class="space-y-4">
+                        <div class="card p-6">
+                            <h4 class="text-lg text-primary">Senior Barista</h4>
+                            <p class="text-sm text-muted">Full-time | Tirupati</p>
+                            <p class="mt-2">Expert in espresso extraction and latte art.</p>
+                        </div>
+                        <div class="card p-6">
+                            <h4 class="text-lg text-primary">Pastry Chef</h4>
+                            <p class="text-sm text-muted">Full-time | Tirupati</p>
+                            <p class="mt-2">Creative mind for our desserts and cakes.</p>
+                        </div>
+                        <div class="card p-6">
+                            <h4 class="text-lg text-primary">Cafe Manager</h4>
+                            <p class="text-sm text-muted">Full-time | Tirupati</p>
+                            <p class="mt-2">Leadership role for overall cafe operations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card p-8">
+                    <h3 class="text-2xl mb-6">Apply Now</h3>
+                    <form action="php/careers.php" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Position Applied For</label>
+                            <select name="position" required>
+                                <option value="barista">Barista</option>
+                                <option value="chef">Pastry Chef</option>
+                                <option value="manager">Cafe Manager</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Upload Resume (PDF)</label>
+                            <input type="file" name="resume" accept=".pdf" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Cover Letter</label>
+                            <textarea name="cover_letter" rows="4" placeholder="Tell us why you want to join us."></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Submit Application</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2026 CAFE & REFRESH. Made with ❤️ by Snehalatha</p>
+        </div>
+    </footer>
+
+    <script src="/src/js/auth.js"></script>
+    <script src="/src/js/cart.js"></script>
+    <script src="/src/js/main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

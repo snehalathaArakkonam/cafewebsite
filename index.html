@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - CAFE & REFRESH</title>
+    <link rel="stylesheet" href="/src/scss/main.scss">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div id="preloader"><div class="loader"></div></div>
+    <div id="toast-container"></div>
+
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">CAFE & REFRESH</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="reservation.html">Reservation</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="cart.html" class="cart-icon">
+                    <i data-lucide="shopping-cart"></i>
+                    <span id="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Premium Coffee Experience</h1>
+            <p>Indulge in the finest brews and delicious treats in a warm, elegant atmosphere. Your perfect refresh starts here.</p>
+            <div class="flex gap-4">
+                <a href="menu.html" class="btn">Explore Menu</a>
+                <a href="reservation.html" class="btn bg-transparent border border-primary text-primary hover:bg-primary hover:text-dark">Book a Table</a>
+            </div>
+        </section>
+
+        <section class="features container">
+            <div class="section-title">
+                <h2>Why Choose Us?</h2>
+                <p>We provide the best quality and service for our customers.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card p-8 text-center">
+                    <div class="text-primary mb-4 flex justify-center"><i data-lucide="coffee" size="48"></i></div>
+                    <h3 class="text-xl mb-3">Premium Beans</h3>
+                    <p class="text-muted">We source our beans from the best plantations across the globe.</p>
+                </div>
+                <div class="card p-8 text-center">
+                    <div class="text-primary mb-4 flex justify-center"><i data-lucide="utensils" size="48"></i></div>
+                    <h3 class="text-xl mb-3">Expert Chefs</h3>
+                    <p class="text-muted">Our culinary team creates magic with every dish they prepare.</p>
+                </div>
+                <div class="card p-8 text-center">
+                    <div class="text-primary mb-4 flex justify-center"><i data-lucide="clock" size="48"></i></div>
+                    <h3 class="text-xl mb-3">Perfect Ambiance</h3>
+                    <p class="text-muted">A cozy and premium environment for your relaxation and work.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta bg-card py-20">
+            <div class="container text-center">
+                <h2 class="text-3xl mb-6">Ready for a Refresh?</h2>
+                <p class="mb-8 max-w-2xl mx-auto">Join us today for an unforgettable experience. Whether it's a quick coffee or a full meal, we have something special for you.</p>
+                <a href="reservation.html" class="btn">Make a Reservation</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="logo">CAFE & REFRESH</h3>
+                    <p>Premium cafe experience in the heart of Andhra Pradesh. Quality coffee, delicious food, and great vibes.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/snehalathaArakkonam" target="_blank"><i data-lucide="github"></i></a>
+                        <a href="https://www.linkedin.com/in/sneha-arakkonam" target="_blank"><i data-lucide="linkedin"></i></a>
+                        <a href="mailto:asnehalatha363@gmail.com"><i data-lucide="mail"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Opening Hours</h3>
+                    <p>Mon - Sun: 8:00 AM - 10:00 PM</p>
+                    <p>Location: Tirupati, Andhra Pradesh, India - 517501</p>
+                    <p>Phone: +91 9492839837</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe for updates and offers.</p>
+                    <form action="php/newsletter.php" method="POST" class="mt-4">
+                        <div class="flex gap-2">
+                            <input type="email" name="email" placeholder="Your Email" class="bg-dark border border-white/10 p-2 rounded w-full text-sm" required>
+                            <button type="submit" class="btn py-2 px-4 text-sm">Join</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CAFE & REFRESH. Made with ❤️ by <a href="https://snexpf.netlify.app/" target="_blank" class="text-primary">Snehalatha</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/src/js/auth.js"></script>
+    <script src="/src/js/cart.js"></script>
+    <script src="/src/js/main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

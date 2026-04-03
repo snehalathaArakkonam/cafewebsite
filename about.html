@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - CAFE & REFRESH</title>
+    <link rel="stylesheet" href="/src/scss/main.scss">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div id="preloader"><div class="loader"></div></div>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">CAFE & REFRESH</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="reservation.html">Reservation</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="cart.html" class="cart-icon">
+                    <i data-lucide="shopping-cart"></i>
+                    <span id="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24">
+        <section class="container">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl mb-6">Our Story</h2>
+                    <p class="text-muted mb-4">Founded in 2024, CAFE & REFRESH started with a simple vision: to create a space where coffee lovers could enjoy premium brews in a setting that feels like home, yet exudes elegance.</p>
+                    <p class="text-muted mb-4">Located in the beautiful city of Tirupati, we take pride in our heritage and our commitment to quality. Every bean is selected with care, and every dish is prepared with passion.</p>
+                    <p class="text-muted">Whether you're here for your morning caffeine fix, a business meeting, or a cozy date, we strive to make every visit a refreshing experience.</p>
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&q=80&w=800" alt="Cafe Interior">
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-card py-20">
+            <div class="container text-center">
+                <h2 class="text-3xl mb-12">Our Core Values</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-6">
+                        <h3 class="text-xl mb-4">Quality</h3>
+                        <p class="text-muted">We never compromise on the quality of our ingredients or our service.</p>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl mb-4">Community</h3>
+                        <p class="text-muted">We believe in building a strong community around our shared love for coffee.</p>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl mb-4">Innovation</h3>
+                        <p class="text-muted">We constantly explore new flavors and techniques to surprise your palate.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2026 CAFE & REFRESH. Made with ❤️ by Snehalatha</p>
+        </div>
+    </footer>
+
+    <script src="/src/js/auth.js"></script>
+    <script src="/src/js/cart.js"></script>
+    <script src="/src/js/main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

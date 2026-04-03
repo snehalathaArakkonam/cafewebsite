@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - CAFE & REFRESH</title>
+    <link rel="stylesheet" href="/src/scss/main.scss">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div id="preloader"><div class="loader"></div></div>
+    <div id="toast-container"></div>
+
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">CAFE & REFRESH</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html" class="active">Menu</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="reservation.html">Reservation</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="cart.html" class="cart-icon">
+                    <i data-lucide="shopping-cart"></i>
+                    <span id="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24">
+        <section class="container">
+            <div class="section-title">
+                <h2>Our Delicious Menu</h2>
+                <p>Explore our wide range of categories and find your favorites.</p>
+            </div>
+
+            <div class="menu-tabs">
+                <button class="tab-btn active" data-category="all">All</button>
+                <button class="tab-btn" data-category="cafe">Café</button>
+                <button class="tab-btn" data-category="sweets">Sweets</button>
+                <button class="tab-btn" data-category="cookies">Cookies</button>
+                <button class="tab-btn" data-category="cakes">Cakes & Desserts</button>
+                <button class="tab-btn" data-category="drinks">Drinks</button>
+                <button class="tab-btn" data-category="milkshakes">Milkshakes</button>
+                <button class="tab-btn" data-category="sandwiches">Sandwiches</button>
+                <button class="tab-btn" data-category="burgers">Burgers & Pizza</button>
+                <button class="tab-btn" data-category="soups">Soups</button>
+                <button class="tab-btn" data-category="salads">Salads</button>
+                <button class="tab-btn" data-category="breakfast">Breakfast</button>
+            </div>
+
+            <div class="menu-grid" id="menu-grid">
+                <!-- Items will be injected here via script or hardcoded -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="logo">CAFE & REFRESH</h3>
+                    <p>Premium cafe experience in the heart of Andhra Pradesh.</p>
+                    <div class="social-links">
+                        <a href="#"><i data-lucide="github"></i></a>
+                        <a href="#"><i data-lucide="linkedin"></i></a>
+                        <a href="#"><i data-lucide="mail"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Opening Hours</h3>
+                    <p>Mon - Sun: 8:00 AM - 10:00 PM</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <form action="php/newsletter.php" method="POST" class="mt-4">
+                        <div class="flex gap-2">
+                            <input type="email" name="email" placeholder="Your Email" class="bg-dark border border-white/10 p-2 rounded w-full text-sm" required>
+                            <button type="submit" class="btn py-2 px-4 text-sm">Join</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CAFE & REFRESH. Made with ❤️ by Snehalatha</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/src/js/auth.js"></script>
+    <script src="/src/js/cart.js"></script>
+    <script src="/src/js/main.js"></script>
+    <script>
+        const menuData = [
+            // Café
+            { id: 'c1', category: 'cafe', name: 'Espresso', price: 140, image: 'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&q=80&w=400', desc: 'Rich and bold single shot of espresso.' },
+            { id: 'c2', category: 'cafe', name: 'Cappuccino', price: 160, image: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&q=80&w=400', desc: 'Espresso with steamed milk and thick foam.' },
+            { id: 'c3', category: 'cafe', name: 'Latte', price: 170, image: 'https://images.unsplash.com/photo-1593967858208-67ddb5b4c426?auto=format&fit=crop&q=80&w=400', desc: 'Classic, Vanilla or Hazelnut flavored latte.' },
+            { id: 'c4', category: 'cafe', name: 'Mocha', price: 180, image: 'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&q=80&w=400', desc: 'Espresso with chocolate and steamed milk.' },
+            { id: 'c5', category: 'cafe', name: 'Americano', price: 150, image: 'https://images.unsplash.com/photo-1551033406-611cf9a28f67?auto=format&fit=crop&q=80&w=400', desc: 'Espresso diluted with hot water.' },
+            { id: 'c6', category: 'cafe', name: 'Filter Coffee', price: 120, image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=400', desc: 'Traditional South Indian filter coffee.' },
+            { id: 'c7', category: 'cafe', name: 'Macchiato', price: 165, image: 'https://images.unsplash.com/photo-1485808191679-5f86510681a2?auto=format&fit=crop&q=80&w=400', desc: 'Espresso marked with a dollop of foam.' },
+            { id: 'c8', category: 'cafe', name: 'Flat White', price: 175, image: 'https://images.unsplash.com/photo-1577968897966-3d4325b36b61?auto=format&fit=crop&q=80&w=400', desc: 'Smooth espresso with microfoam.' },
+            { id: 'c9', category: 'cafe', name: 'Masala Chai', price: 80, image: 'https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?auto=format&fit=crop&q=80&w=400', desc: 'Spiced Indian tea with milk.' },
+            { id: 'c10', category: 'cafe', name: 'Ginger Tea', price: 70, image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&q=80&w=400', desc: 'Refreshing tea with fresh ginger.' },
+            { id: 'c11', category: 'cafe', name: 'Green Tea', price: 90, image: 'https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?auto=format&fit=crop&q=80&w=400', desc: 'Healthy and antioxidant-rich green tea.' },
+            
+            // Sweets
+            { id: 's1', category: 'sweets', name: 'Gulab Jamun', price: 80, image: 'https://images.unsplash.com/photo-1589119908995-c6837fa14848?auto=format&fit=crop&q=80&w=400', desc: 'Soft milk-based dumplings in syrup.' },
+            { id: 's2', category: 'sweets', name: 'Rasgulla', price: 90, image: 'https://images.unsplash.com/photo-1593708041369-124e02895b3e?auto=format&fit=crop&q=80&w=400', desc: 'Spongy cottage cheese balls in syrup.' },
+            { id: 's3', category: 'sweets', name: 'Jalebi', price: 70, image: 'https://images.unsplash.com/photo-1605197509751-62ad15fc0a30?auto=format&fit=crop&q=80&w=400', desc: 'Crispy deep-fried pretzels in syrup.' },
+            { id: 's4', category: 'sweets', name: 'Halwa', price: 100, image: 'https://images.unsplash.com/photo-1589119908995-c6837fa14848?auto=format&fit=crop&q=80&w=400', desc: 'Carrot or Moong Dal halwa.' },
+            { id: 's5', category: 'sweets', name: 'Kheer', price: 110, image: 'https://images.unsplash.com/photo-1589119908995-c6837fa14848?auto=format&fit=crop&q=80&w=400', desc: 'Traditional Indian rice pudding.' },
+            { id: 's6', category: 'sweets', name: 'Motichoor Ladoo', price: 85, image: 'https://images.unsplash.com/photo-1589119908995-c6837fa14848?auto=format&fit=crop&q=80&w=400', desc: 'Sweet gram flour pearls.' },
+            { id: 's7', category: 'sweets', name: 'Rasmalai', price: 120, image: 'https://images.unsplash.com/photo-1589119908995-c6837fa14848?auto=format&fit=crop&q=80&w=400', desc: 'Soft cheese patties in saffron milk.' },
+
+            // Cookies
+            { id: 'ck1', category: 'cookies', name: 'Chocolate Chip Cookies', price: 60, image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&q=80&w=400', desc: 'Classic cookies with chocolate chips (2 pcs).' },
+            { id: 'ck2', category: 'cookies', name: 'Oatmeal Raisin', price: 65, image: 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&q=80&w=400', desc: 'Healthy oats with sweet raisins.' },
+            { id: 'ck3', category: 'cookies', name: 'Butter Cookies', price: 55, image: 'https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&q=80&w=400', desc: 'Rich and buttery shortbread cookies.' },
+            { id: 'ck4', category: 'cookies', name: 'Almond Biscotti', price: 70, image: 'https://images.unsplash.com/photo-1559622214-f8a9850965bb?auto=format&fit=crop&q=80&w=400', desc: 'Twice-baked Italian almond biscuits.' },
+            { id: 'ck5', category: 'cookies', name: 'Dark Chocolate Cookies', price: 75, image: 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&q=80&w=400', desc: 'Intense dark chocolate flavor.' },
+            { id: 'ck6', category: 'cookies', name: 'Coconut Cookies', price: 60, image: 'https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&q=80&w=400', desc: 'Crunchy cookies with shredded coconut.' },
+
+            // Cakes
+            { id: 'ca1', category: 'cakes', name: 'Chocolate Truffle Cake', price: 180, image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=400', desc: 'Decadent chocolate truffle slice.' },
+            { id: 'ca2', category: 'cakes', name: 'Red Velvet', price: 200, image: 'https://images.unsplash.com/photo-1586788680434-30d324671ff6?auto=format&fit=crop&q=80&w=400', desc: 'Classic red velvet with cream cheese.' },
+            { id: 'ca3', category: 'cakes', name: 'Blueberry Cheesecake', price: 220, image: 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&q=80&w=400', desc: 'Creamy cheesecake with blueberry topping.' },
+            { id: 'ca4', category: 'cakes', name: 'Tiramisu', price: 190, image: 'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&q=80&w=400', desc: 'Italian coffee-flavored dessert.' },
+            { id: 'ca5', category: 'cakes', name: 'Brownie with Ice Cream', price: 150, image: 'https://images.unsplash.com/photo-1564355808539-22fda35bed7e?auto=format&fit=crop&q=80&w=400', desc: 'Warm brownie with vanilla scoop.' },
+            { id: 'ca6', category: 'cakes', name: 'Fruit Tart', price: 160, image: 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&q=80&w=400', desc: 'Crispy crust with fresh fruits.' },
+            { id: 'ca7', category: 'cakes', name: 'Black Forest Cake', price: 210, image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&q=80&w=400', desc: 'Chocolate cake with cherries and cream.' },
+            { id: 'ca8', category: 'cakes', name: 'Mango Mousse', price: 170, image: 'https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&q=80&w=400', desc: 'Light and airy mango flavored mousse.' },
+
+            // Drinks
+            { id: 'd1', category: 'drinks', name: 'Fresh Lime Soda', price: 80, image: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&q=80&w=400', desc: 'Refreshing lime soda with mint.' },
+            { id: 'd2', category: 'drinks', name: 'Mango Lassi', price: 120, image: 'https://images.unsplash.com/photo-1571006682868-a2d3ff8d9924?auto=format&fit=crop&q=80&w=400', desc: 'Creamy yogurt-based mango drink.' },
+            { id: 'd3', category: 'drinks', name: 'Lemon Mint Cooler', price: 90, image: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&q=80&w=400', desc: 'Cooling lemon and mint beverage.' },
+            { id: 'd4', category: 'drinks', name: 'Iced Tea', price: 100, image: 'https://images.unsplash.com/photo-1499638673689-79a0b5115d87?auto=format&fit=crop&q=80&w=400', desc: 'Peach or Lemon flavored iced tea.' },
+            { id: 'd5', category: 'drinks', name: 'Cold Coffee', price: 140, image: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&q=80&w=400', desc: 'Chilled coffee with milk and ice cream.' },
+            { id: 'd6', category: 'drinks', name: 'Virgin Mojito', price: 130, image: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&q=80&w=400', desc: 'Classic mojito without alcohol.' },
+            { id: 'd7', category: 'drinks', name: 'Fresh Orange Juice', price: 110, image: 'https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&q=80&w=400', desc: '100% pure fresh orange juice.' },
+            { id: 'd8', category: 'drinks', name: 'Sugarcane Juice', price: 90, image: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&q=80&w=400', desc: 'Freshly extracted sugarcane juice.' },
+            { id: 'd9', category: 'drinks', name: 'Buttermilk (Chaas)', price: 80, image: 'https://images.unsplash.com/photo-1571006682868-a2d3ff8d9924?auto=format&fit=crop&q=80&w=400', desc: 'Traditional spiced buttermilk.' },
+
+            // Milkshakes
+            { id: 'm1', category: 'milkshakes', name: 'Chocolate Milkshake', price: 160, image: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&q=80&w=400', desc: 'Rich chocolate blended with milk.' },
+            { id: 'm2', category: 'milkshakes', name: 'Strawberry Milkshake', price: 160, image: 'https://images.unsplash.com/photo-1553787499-6f9133860242?auto=format&fit=crop&q=80&w=400', desc: 'Fresh strawberries and milk blend.' },
+            { id: 'm3', category: 'milkshakes', name: 'Oreo Milkshake', price: 180, image: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&q=80&w=400', desc: 'Oreo cookies blended with milk.' },
+            { id: 'm4', category: 'milkshakes', name: 'Vanilla Ice Cream', price: 100, image: 'https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&q=80&w=400', desc: 'Classic vanilla ice cream scoop.' },
+            { id: 'm5', category: 'milkshakes', name: 'Mango Ice Cream', price: 120, image: 'https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&q=80&w=400', desc: 'Real mango flavored ice cream.' },
+            { id: 'm6', category: 'milkshakes', name: 'Butterscotch Sundae', price: 150, image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&q=80&w=400', desc: 'Butterscotch ice cream with toppings.' },
+            { id: 'm7', category: 'milkshakes', name: 'Banana Milkshake', price: 150, image: 'https://images.unsplash.com/photo-1553787499-6f9133860242?auto=format&fit=crop&q=80&w=400', desc: 'Healthy banana and milk shake.' },
+            { id: 'm8', category: 'milkshakes', name: 'KitKat Milkshake', price: 190, image: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&q=80&w=400', desc: 'KitKat chocolate blended shake.' },
+            { id: 'm9', category: 'milkshakes', name: 'Falooda', price: 180, image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&q=80&w=400', desc: 'Traditional dessert drink with vermicelli.' },
+
+            // Sandwiches
+            { id: 'sw1', category: 'sandwiches', name: 'Veg Club Sandwich', price: 140, image: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&q=80&w=400', desc: 'Triple layer veg sandwich.' },
+            { id: 'sw2', category: 'sandwiches', name: 'Paneer Tikka Sandwich', price: 160, image: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&q=80&w=400', desc: 'Spiced paneer in grilled bread.' },
+            { id: 'sw3', category: 'sandwiches', name: 'Grilled Cheese Sandwich', price: 130, image: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&q=80&w=400', desc: 'Classic melted cheese sandwich.' },
+            { id: 'sw4', category: 'sandwiches', name: 'Chicken Mayo Sandwich', price: 170, image: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&q=80&w=400', desc: 'Grilled chicken with creamy mayo.' },
+            { id: 'sw5', category: 'sandwiches', name: 'Tuna Melt', price: 190, image: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&q=80&w=400', desc: 'Tuna salad with melted cheese.' },
+            { id: 'sw6', category: 'sandwiches', name: 'Aloo Tikki Sandwich', price: 130, image: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&q=80&w=400', desc: 'Spiced potato patty sandwich.' },
+            { id: 'sw7', category: 'sandwiches', name: 'Egg Sandwich', price: 140, image: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&q=80&w=400', desc: 'Boiled or fried egg sandwich.' },
+
+            // Burgers
+            { id: 'b1', category: 'burgers', name: 'Classic Cheese Burger', price: 180, image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&q=80&w=400', desc: 'Juicy patty with melted cheese.' },
+            { id: 'b2', category: 'burgers', name: 'Veggie Supreme Burger', price: 160, image: 'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&q=80&w=400', desc: 'Healthy vegetable patty burger.' },
+            { id: 'b3', category: 'burgers', name: 'Chicken BBQ Burger', price: 200, image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&q=80&w=400', desc: 'Grilled chicken with BBQ sauce.' },
+            { id: 'b4', category: 'burgers', name: 'Margherita Pizza', price: 220, image: 'https://images.unsplash.com/photo-1574071318508-1cdbad80ad50?auto=format&fit=crop&q=80&w=400', desc: 'Classic cheese and tomato pizza.' },
+            { id: 'b5', category: 'burgers', name: 'Veggie Delight Pizza', price: 240, image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=400', desc: 'Loaded with fresh vegetables.' },
+            { id: 'b6', category: 'burgers', name: 'Paneer Tikka Pizza', price: 260, image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=400', desc: 'Spiced paneer toppings.' },
+            { id: 'b7', category: 'burgers', name: 'French Fries', price: 100, image: 'https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&q=80&w=400', desc: 'Crispy golden potato fries.' },
+            { id: 'b8', category: 'burgers', name: 'Peri Peri Fries', price: 120, image: 'https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&q=80&w=400', desc: 'Spicy peri peri seasoned fries.' },
+
+            // Soups
+            { id: 'sp1', category: 'soups', name: 'Tomato Basil Soup', price: 110, image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&q=80&w=400', desc: 'Classic tomato soup with basil.' },
+            { id: 'sp2', category: 'soups', name: 'Cream of Mushroom', price: 130, image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&q=80&w=400', desc: 'Rich and creamy mushroom soup.' },
+            { id: 'sp3', category: 'soups', name: 'Sweet Corn Veg Soup', price: 120, image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&q=80&w=400', desc: 'Comforting sweet corn soup.' },
+            { id: 'sp4', category: 'soups', name: 'Chicken Clear Soup', price: 140, image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&q=80&w=400', desc: 'Healthy clear chicken broth.' },
+            { id: 'sp5', category: 'soups', name: 'Minestrone Soup', price: 135, image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&q=80&w=400', desc: 'Italian vegetable soup.' },
+            { id: 'sp6', category: 'soups', name: 'Hot & Sour Soup', price: 130, image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&q=80&w=400', desc: 'Spicy and tangy soup.' },
+
+            // Salads
+            { id: 'sl1', category: 'salads', name: 'Greek Salad', price: 150, image: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=400', desc: 'Fresh veggies with feta cheese.' },
+            { id: 'sl2', category: 'salads', name: 'Caesar Salad', price: 160, image: 'https://images.unsplash.com/photo-1550304943-4f24f54ddde9?auto=format&fit=crop&q=80&w=400', desc: 'Classic Caesar with croutons.' },
+            { id: 'sl3', category: 'salads', name: 'Quinoa Veggie Salad', price: 170, image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=400', desc: 'Healthy quinoa and mixed veg.' },
+            { id: 'sl4', category: 'salads', name: 'Fruit Salad', price: 100, image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=400', desc: 'Seasonal fresh fruit mix.' },
+            { id: 'sl5', category: 'salads', name: 'Garden Fresh Salad', price: 140, image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=400', desc: 'Freshly picked garden veggies.' },
+            { id: 'sl6', category: 'salads', name: 'Sprouts Salad', price: 120, image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=400', desc: 'High protein mixed sprouts.' },
+            { id: 'sl7', category: 'salads', name: 'Beetroot & Carrot Salad', price: 130, image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=400', desc: 'Crunchy beetroot and carrot.' },
+
+            // Breakfast
+            { id: 'br1', category: 'breakfast', name: 'Avocado Toast', price: 180, image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&q=80&w=400', desc: 'Smashed avocado on toasted bread.' },
+            { id: 'br2', category: 'breakfast', name: 'Pancakes', price: 160, image: 'https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&q=80&w=400', desc: 'Fluffy pancakes with maple syrup.' },
+            { id: 'br3', category: 'breakfast', name: 'Omelette', price: 140, image: 'https://images.unsplash.com/photo-1510627489930-0c1b0ba0548f?auto=format&fit=crop&q=80&w=400', desc: 'Cheese or Veg filled omelette.' },
+            { id: 'br4', category: 'breakfast', name: 'Idli / Vada', price: 110, image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&q=80&w=400', desc: 'Served with chutney and sambar.' },
+            { id: 'br5', category: 'breakfast', name: 'Masala Dosa', price: 130, image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&q=80&w=400', desc: 'Crispy dosa with potato filling.' },
+        ];
+
+        function renderMenu() {
+            const grid = document.getElementById('menu-grid');
+            grid.innerHTML = menuData.map(item => `
+                <div class="menu-item card" data-category="${item.category}">
+                    <div class="item-img">
+                        <img src="${item.image}" alt="${item.name}">
+                    </div>
+                    <div class="item-info">
+                        <div class="item-header">
+                            <h3>${item.name}</h3>
+                            <span class="price">₹${item.price}</span>
+                        </div>
+                        <p>${item.desc}</p>
+                        <button class="add-to-cart" onclick='addToCart(${JSON.stringify(item)})'>Add to Cart</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        document.addEventListener('DOMContentLoaded', renderMenu);
+    </script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
